@@ -1,0 +1,128 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #006338;
+    opacity: 1;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #006338a2 24px), repeating-linear-gradient(#033b1e55, #033b1e);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#bookmarksList {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+
+.card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: none;
+    border-radius: 10px;
+    width: calc(33.333% - 20px);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+    transform: scale(1.015);
+}
+
+.group-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+    background-color: white;
+    color: #006338;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.group-header h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    
+}
+
+.group-header .badge {
+    font-size: 1rem;
+}
+
+.group-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.group-cards.collapsed {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.btn-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.btn-delete:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+    .card {
+      width: calc(50% - 1rem);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+    
+    .navbar-brand {
+      font-size: 1rem;
+    }
+    
+    .navbar-nav {
+      margin-top: 1rem;
+    }
+  }
+
+.hb {
+    color: #006338;
+    border-color: #006338;
+}
+
+.hb:hover {
+    color: white;
+    background-color: #006338;
+}

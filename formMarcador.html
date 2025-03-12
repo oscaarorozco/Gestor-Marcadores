@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Marcador</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #006338;
+        opacity: 1;
+        background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #006338a2 24px), repeating-linear-gradient(#033b1e55, #033b1e);
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    h1,
+    label {
+        color: white;
+    }
+
+    .th {
+        color: white;
+        border-color: white;
+    }
+
+    .th:hover {
+        color: #006338;
+        border-color: #006338;
+        background-color: white;
+    }
+</style>
+
+<body>
+    <div class="container mt-5">
+        <span class="fs-4 text fw-normal" style="color: white;">Nuevo marcador</span>
+        <hr class="hr hr-blurry" style="color: white;"/>
+        <form id="bookmarkForm" class="mt-4">
+            <div class="mb-3">
+                <label for="bookmarkName" class="form-label">Nombre del Marcador*</label>
+                <input type="text" class="form-control" id="bookmarkName" required>
+            </div>
+            <div class="mb-3">
+                <label for="bookmarkUrl" class="form-label">Enlace URL*</label>
+                <input type="url" class="form-control" id="bookmarkUrl" required>
+            </div>
+            <div class="mb-3">
+                <label for="bookmarkImageUrl" class="form-label">Enlace URL de la Imagen</label>
+                <input type="url" class="form-control" id="bookmarkImageUrl">
+            </div>
+            <div class="mb-3">
+                <label for="bookmarkDescription" class="form-label">Descripción</label>
+                <textarea class="form-control" id="bookmarkDescription" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="bookmarkGroup" class="form-label">Grupo*</label>
+                <input type="text" class="form-control" id="bookmarkGroup" required>
+            </div>
+            <button type="submit" class="btn btn-outline-secondary th">Agregar Marcador</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('bookmarkForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Obtener los valores del formulario
+            const name = document.getElementById('bookmarkName').value;
+            const url = document.getElementById('bookmarkUrl').value;
+            const imageUrl = document.getElementById('bookmarkImageUrl').value;
+            const description = document.getElementById('bookmarkDescription').value;
+            const group = document.getElementById('bookmarkGroup').value;
+
+            // Crear un objeto de marcador
+            const bookmark = {
+                name: name,
+                url: url,
+                imageUrl: imageUrl,
+                description: description,
+                group: group
+            };
+
+            // Guardar el marcador en localStorage
+            saveBookmark(bookmark);
+
+            alert('Marcador Guardado correctamente');
+
+            // Redirigir a la página principal
+            window.location.href = 'index.html';
+        });
+
+        function saveBookmark(bookmark) {
+            let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+            bookmarks.push(bookmark);
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+        }
+    </script>
+</body>
+
+</html>

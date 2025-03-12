@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de marcadores</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Animate.css para animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Css-->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <span class="fs-4 text fw-light" style="color:#006338;">Gestor de Marcadores /</span>
+            <span class="fs-4 text fw-bolder" style="color:#006338;">Usuario</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <div class="navbar-nav ms-auto">
+              <a href="#" class="nav-item btn btn-outline-secondary btn-md hb me-2 mb-2 mb-lg-0" onclick="uploadBookmarks()">
+                <i class="bi bi-upload me-2"></i>Cargar Marcadores
+              </a>
+              <a href="#" class="nav-item btn btn-outline-secondary btn-md hb me-2 mb-2 mb-lg-0" onclick="downloadBookmarks()">
+                <i class="bi bi-download me-2"></i>Descargar Marcadores
+              </a>
+              <a href="formMarcador.html" class="nav-item btn btn-outline-secondary btn-md hb me-2 mb-2 mb-lg-0">
+                <i class="bi bi-bookmark-plus me-2"></i>Crear Marcador
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+    <div class="container mt-5 pt-5">
+        <div id="loading" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+        </div>
+
+        <div id="bookmarksList">
+            <!-- Aquí se mostrarán los marcadores organizados por grupo -->
+        </div>
+    </div>
+
+    <!-- Modal para personalizar grupo -->
+    <div class="modal fade" id="customizeGroupModal" tabindex="-1" aria-labelledby="customizeGroupModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="customizeGroupModalLabel">Personalizar Grupo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="customizeGroupForm">
+                        <div class="mb-3">
+                            <label for="groupName" class="form-label">Nombre del Grupo</label>
+                            <input type="text" class="form-control" id="groupName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="groupIcon" class="form-label">Icono del Grupo (Emoji)</label>
+                            <input type="text" class="form-control" id="groupIcon" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="groupFontSize" class="form-label">Tamaño de la Letra</label>
+                            <input type="number" class="form-control" id="groupFontSize" min="12" max="36" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-outline-secondary" id="saveGroupCustomization">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Js-->
+    <script src="/js/funcMarcador.js"></script>
+</body>
+
+</html>
