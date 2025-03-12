@@ -1,7 +1,7 @@
 # Gestor de marcadores 🔖
 Aplicación web de gestión de marcadores.
 
-## 🎉 Funciones principales
+## Funciones principales 
 - Agregar marcadores y organizarlos por grupos.
 - Organización de los grupos arrastrando los componentes (draggable).
 - Personalización en ajustes.
