@@ -6,8 +6,8 @@ Aplicación web de gestión de marcadores.
 - Organización de los grupos arrastrando los componentes (draggable).
 - Personalización en ajustes.
 - Importación y exportación de los marcadores en formato JSON.
-- Almacenamiento de los marcadores (Persistencia de datos con Local Storage)
-- Diseño responsive
+- Almacenamiento de los marcadores. (Persistencia de datos con Local Storage)
+- Diseño responsive.
 
 
 ![ImagenDemo](https://gestormarcadores.netlify.app/img/captura%20de%20pantalla%202025-03-12%20132254.png)
