@@ -24,7 +24,7 @@ Imagen demo
 
 ![Static Badge](https://img.shields.io/badge/Javascript-yellow?style=flat)
 ![Static Badge](https://img.shields.io/badge/HTML-orange?style=flat)
-![Static Badge](https://img.shields.io/badge/Javascript-blue?style=flat)
+![Static Badge](https://img.shields.io/badge/CSS-blue?style=flat)
 
 
 ## Licencia
