@@ -16,12 +16,10 @@ Imagen demo
 ## Autor
 🙋🏻‍♂️ [Oscar Orozco](https://github.com/oscaarorozco)
 
-
 ## Demo
+🔗 [Ver demo](https://gestormarcadores.netlify.app)
 
-🔗 https://gestormarcadores.netlify.app
 ## Lenguajes utilizados
-
 ![Static Badge](https://img.shields.io/badge/Javascript-yellow?style=flat)
 ![Static Badge](https://img.shields.io/badge/HTML-orange?style=flat)
 ![Static Badge](https://img.shields.io/badge/CSS-blue?style=flat)
